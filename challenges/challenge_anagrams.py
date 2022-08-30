@@ -20,17 +20,16 @@ def quick_sort(numbers, start, end):
         quick_sort(numbers, p + 1, end)
 
 
-def partition(numbers, start, end):
-    pivot = numbers[end]
+def partition(n, start, end):
+    pivot = n[end]
     delimiter = start - 1
 
     for index in range(start, end):
-        if numbers[index] <= pivot:
+        if n[index] <= pivot:
             delimiter = delimiter + 1
-            numbers[index], numbers[delimiter] = numbers[delimiter],
-            numbers[index]
+            n[index], n[delimiter] = n[delimiter], n[index]
 
-    numbers[delimiter + 1], numbers[end] = numbers[end], numbers[delimiter + 1]
+    n[delimiter + 1], n[end] = n[end], n[delimiter + 1]
 
     return delimiter + 1
 
